@@ -1,5 +1,6 @@
-@import "tailwindcss";
-@config "../tailwind.config.js";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Global Body Gradient */
 body {
@@ -15,18 +16,42 @@ body {
 
 /* Button Gradient */
 .btn-gradient {
-  @apply px-4 py-2 rounded-lg text-white font-semibold shadow-lg transition transform hover:scale-105;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+.btn-gradient:hover {
+  transform: scale(1.05);
+}
+
+.btn-gradient {
   background: linear-gradient(to right, #f472b6, #a855f7, #6366f1);
 }
 
 /* Card Shadow / Glass */
 .card-shadow {
-  @apply shadow-2xl rounded-lg p-4 bg-white/70 backdrop-blur-sm;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: rgba(255,255,255,0.7);
+  backdrop-filter: blur(4px);
 }
 
 /* Glass Container */
 .glass-container {
-  @apply bg-white/50 backdrop-blur-md rounded-xl p-8 shadow-2xl max-w-3xl w-full;
+  background-color: rgba(255,255,255,0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+  max-width: 48rem;
+  width: 100%;
 }
 
 /* Animated Text Pulse */
