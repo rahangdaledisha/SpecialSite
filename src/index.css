@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+/* Global Body Gradient */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    #f472b6,  /* pink */
+    #a855f7,  /* purple */
+    #6366f1   /* indigo */
+  );
+}
+
+/* Button Gradient */
+.btn-gradient {
+  @apply px-4 py-2 rounded-lg text-white font-semibold shadow-lg transition transform hover:scale-105;
+  background: linear-gradient(to right, #f472b6, #a855f7, #6366f1);
+}
+
+/* Card Shadow / Glass */
+.card-shadow {
+  @apply shadow-2xl rounded-lg p-4 bg-white/70 backdrop-blur-sm;
+}
+
+/* Glass Container */
+.glass-container {
+  @apply bg-white/50 backdrop-blur-md rounded-xl p-8 shadow-2xl max-w-3xl w-full;
+}
+
+/* Animated Text Pulse */
+@keyframes pulse-text {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.animate-pulse-text {
+  animation: pulse-text 2s infinite;
+}
+
+/* Floating Balloons Animation */
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  50% { transform: translateY(-200px) rotate(10deg); opacity: 0.8; }
+  100% { transform: translateY(-400px) rotate(-10deg); opacity: 0; }
+}
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Balloon delays */
+.delay-0 { animation-delay: 0s; }
+.delay-1000 { animation-delay: 1s; }
+.delay-2000 { animation-delay: 2s; }
+.delay-3000 { animation-delay: 3s; }
+
+/* Gradient animation background (optional) */
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient-x {
+  background-size: 400% 400%;
+  animation: gradient-x 15s ease infinite;
+}
